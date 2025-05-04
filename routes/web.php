@@ -9,10 +9,10 @@ use App\Http\Controllers\PerhitunganAHPController;
 use App\Http\Controllers\ResidentController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('layouts.app');
-});
-Route::get('/dashboard', [DashboardController::class,'index']);
+// Route::get('/', function () {
+//     return view('layouts.app');
+// });
+Route::get('/', [DashboardController::class,'index']);
 
 Route::get('/resident', [ResidentController::class, 'index']);
 Route::get('/resident', [PerhitunganAHPController::class, 'calculateAHP']);
