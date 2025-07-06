@@ -13,7 +13,7 @@ use Illuminate\Http\Middleware\TrustProxies;
 class Kernel extends HttpKernel
 {
     protected $middleware = [
-        \Illuminate\Http\Middleware\HandleCors::class,
+        HandleCors::class,
         TrustProxies::class,
         PreventRequestsDuringMaintenance::class,
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
