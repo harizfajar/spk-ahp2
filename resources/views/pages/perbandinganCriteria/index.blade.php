@@ -10,7 +10,7 @@
         <div class="col">
             <div class="card p-3">
                 <h4 class="mt-4">Matriks Perbandingan Kriteria</h4>
-                <form action="{{ route('criteria.compare') }}" method="POST" class="form-inline mb-4">
+                <form action="/criteria/compare" method="POST" class="form-inline mb-4">
                     @csrf
                     <div class="form-group mx-2">
                         <label for="criteria_id_1" class="mr-2">Kriteria 1</label>
