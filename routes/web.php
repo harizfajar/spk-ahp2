@@ -14,13 +14,13 @@ use Illuminate\Support\Facades\Route;
 // });
 Route::get('/', [DashboardController::class,'index']);
 
-Route::get('/resident', [ResidentController::class, 'index']);
+// Route::get('/resident', [ResidentController::class, 'index']);
 Route::get('/resident', [PerhitunganAHPController::class, 'calculateAHP']);
-Route::get('/resident/create', [ResidentController::class, 'create']);
-Route::get('/resident/edit/{id}', [ResidentController::class, 'edit']);
-Route::post('/resident/store', [ResidentController::class, 'store']);
-Route::put('/resident/update/{id}', [ResidentController::class, 'update']);
-Route::delete('/resident/{id}/delete', [ResidentController::class, 'delete']);
+// Route::get('/resident/create', [ResidentController::class, 'create']);
+// Route::get('/resident/edit/{id}', [ResidentController::class, 'edit']);
+// Route::post('/resident/store', [ResidentController::class, 'store']);
+// Route::put('/resident/update/{id}', [ResidentController::class, 'update']);
+// Route::delete('/resident/{id}/delete', [ResidentController::class, 'delete']);
 
 Route::get('/alternatives',[AlternativeController::class, 'index']);
 Route::get('/alternatives/create',[AlternativeController::class,'create']);

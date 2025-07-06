@@ -141,6 +141,10 @@ class PerhitunganAHPController extends Controller
                 }
             }
         }
+        $altIds = array_keys($normalizedAlternatives);
+
+        $alternatifMap = Alternative::whereIn('id', $altIds)->get()->keyBy('id');
+
 
 
         // [NEW] Hitung skor berdasarkan nilai normalisasi
@@ -176,7 +180,8 @@ class PerhitunganAHPController extends Controller
             'CR' => $CR,
             'isConsistent' => $CR < 0.1,
             'alternativeScores' => $alternativeScores,
-            'normalizedAlternatives' => $normalizedAlternatives, // [NEW]
+            'normalizedAlternatives' => $normalizedAlternatives, 
+            'alternatifMap' => $alternatifMap, 
 
         ]);
     }

@@ -33,8 +33,8 @@
                         <tr>
                             <th>Kode</th>
                             <th>Nama Alternatif</th>
-                            @foreach ($values->unique('criteria') as $item)
-                                <th>{{ $item->criteria->name }}</th>
+                            @foreach ($criterias as $criteria)
+                                <th>{{ $criteria->name }}</th>
                             @endforeach
                             <th>Aksi</th>
                         </tr>
@@ -44,11 +44,10 @@
                             <tr>
                                 <td>{{ 'A' . $item->first()->alternative->id }}</td>
                                 <td>{{ $item->first()->alternative->name }}</td>
-                                @foreach ($values->unique('criteria_id') as $criteria)
+                                @foreach ($criterias as $criteria)
                                     @php
-                                        // Mencari nilai perbandingan untuk alternatif dan kriteria ini
-                                        $value =
-                                            $item->firstWhere('criteria_id', $criteria->criteria_id)?->value ?? '-';
+                                        $comparison = $item->firstWhere('criteria_id', $criteria->id);
+                                        $value = $comparison?->value ?? '-';
                                     @endphp
                                     <td>{{ is_numeric($value) ? number_format($value) : $value }}</td>
                                 @endforeach

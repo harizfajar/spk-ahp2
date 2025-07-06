@@ -1,7 +1,7 @@
 <ul class="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
         <img src="{{ asset('assets/logo-unpak.png') }}" width="50" height="50" alt="">
     </a>
 

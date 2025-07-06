@@ -119,11 +119,8 @@
             </thead>
             <tbody>
                 @foreach ($normalizedAlternatives as $altId => $criteriaValues)
-                    @php
-                        $alt = \App\Models\Alternative::find($altId);
-                    @endphp
                     <tr>
-                        <th>{{ $alt ? $alt->name : 'A' . $altId }}</th>
+                        <th>{{ $alternatifMap[$altId]->name ?? 'A' . $altId }}</th>
                         @foreach ($criterias as $criteria)
                             <td>
                                 {{ isset($criteriaValues[$criteria->id])

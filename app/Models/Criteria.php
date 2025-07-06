@@ -18,4 +18,5 @@ class Criteria extends Model
     {
         return $this->hasMany(CriteriaComparisons::class, 'criteria_id_2');
     }
+    
 }

@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Belajar - Dashboard</title>
+    <title>Belajar - SPK AHP</title>
     <link rel="icon" type="image/svg+xml" href="{{ asset('template/img/undraw_rocket.svg') }}">
 
 
@@ -58,7 +58,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright my-auto text-center">
-                        <span>Copyright &copy; AHP {{ date('Y') }}</span>
+                        <span>Copyright &copy; BOJAY {{ date('Y') }}</span>
                     </div>
                 </div>
             </footer>

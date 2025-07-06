@@ -20,9 +20,7 @@ class AlternativeComparisonsController extends Controller
         // Mengirimkan data ke view
         return view('pages.perbandinganAlternative.index', [
             'values' => $alternativeCom, // Data perbandingan alternatif
-            // 'alternatives' => $alternatives, // Data alternatif
-            // 'criterias' => $criterias, // Data kriteria
-        ]);
+        ])->with(['alternatives' => Alternative::all(), 'criterias' => Criteria::all()]);
     }
 
 
@@ -52,14 +50,33 @@ class AlternativeComparisonsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit($id)
-    {
-        $comparisons = AlternativeComparisons::with(['alternative', 'criteria'])
-        ->where('alternative_id', $id)
-        ->get();        return view('pages.perbandinganAlternative.edit', [
-            'values' => $comparisons,
-        ]);
+public function edit($alternative_id)
+{
+    $criterias = Criteria::all();
+
+    // Ambil perbandingan yang sudah ada
+    $comparisons = AlternativeComparisons::where('alternative_id', $alternative_id)->get();
+
+    // Cek kriteria yang belum ada perbandingannya
+    foreach ($criterias as $criteria) {
+        $exists = $comparisons->firstWhere('criteria_id', $criteria->id);
+
+        if (!$exists) {
+            $newComparison = AlternativeComparisons::create([
+                'alternative_id' => $alternative_id,
+                'criteria_id' => $criteria->id,
+                'value' => 0 // atau 0 / 1 tergantung default kamu
+            ]);
+
+            $comparisons->push($newComparison);
+        }
     }
+
+    return view('pages.perbandinganAlternative.edit', [
+        'values' => $comparisons->sortBy('criteria_id'), // optional: urutkan kriteria
+    ]);
+}
+
 
     /**
      * Update the specified resource in storage.

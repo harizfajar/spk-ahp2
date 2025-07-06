@@ -1,9 +1,9 @@
 @extends('layouts.app')
 @section('content')
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Criteria</h1>
+        <h1 class="h3 mb-0 text-gray-800">Kriteria</h1>
         <a href="/criteria/create" class="d-sm-inline-block btn btn-sm btn-secondary shadow-sm"><i
-                class="fas fa-plus fa-sm text-white-50"></i> Tambah Criteria</a>
+                class="fas fa-plus fa-sm text-white-50"></i> Tambah Kriteria</a>
     </div>
 
     <div class="row">
