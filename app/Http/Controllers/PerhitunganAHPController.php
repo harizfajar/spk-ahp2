@@ -97,13 +97,13 @@ class PerhitunganAHPController extends Controller
         // 9. CI dan CR
         $CI = ($lambdaMax - $n) / ($n - 1);
         $RI = [0, 0, 0.58, 0.90, 1.12, 1.24]; // bisa ditambah
-        $CR = $CI / ($RI[$n-1] ?? 1);
+        $CR = $CI / ($RI[$n - 1] ?? 1);
 
         // 10. Ambil data alternatif
         $alternatives = Alternative::all();
 
         // 11. Hitung total skor tiap alternatif (AHP)
-       // Tambahan di atas sebelum return view
+        // Tambahan di atas sebelum return view
 
         // 10. Ambil data alternatif
         $alternatives = Alternative::all();
@@ -170,7 +170,7 @@ class PerhitunganAHPController extends Controller
         // Urutkan dari yang tertinggi
         usort($alternativeScores, fn($a, $b) => $b['score'] <=> $a['score']);
 
-        return view('pages.perhitunganAHP.index', [
+        return view('pages.perhitunganAhp.index', [
             'criterias' => $criterias,
             'matrix' => $matrix,
             'normalizedMatrix' => $normalizedMatrix,
@@ -180,10 +180,9 @@ class PerhitunganAHPController extends Controller
             'CR' => $CR,
             'isConsistent' => $CR < 0.1,
             'alternativeScores' => $alternativeScores,
-            'normalizedAlternatives' => $normalizedAlternatives, 
-            'alternatifMap' => $alternatifMap, 
+            'normalizedAlternatives' => $normalizedAlternatives,
+            'alternatifMap' => $alternatifMap,
 
         ]);
     }
-
 }

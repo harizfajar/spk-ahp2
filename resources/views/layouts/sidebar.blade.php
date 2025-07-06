@@ -2,7 +2,7 @@
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
-        <img src="{{ asset('assets/logo-unpak.png') }}" width="50" height="50" alt="">
+        <img src="{{ secure_asset('assets/logo-unpak.png') }}" width="50" height="50" alt="">
     </a>
 
     <!-- Divider -->
