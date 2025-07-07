@@ -10,7 +10,7 @@
     <meta name="author" content="">
 
     <title>Belajar - SPK AHP</title>
-    <link rel="icon" type="image/svg+xml" href="{{ asset('template/img/undraw_rocket.svg') }}">
+    <link rel="icon" type="image/svg+xml" href="template/img/undraw_rocket.svg">
 
 
     <!-- Custom fonts for this template-->
@@ -21,7 +21,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- Custom styles for this template-->
-    <link href="{{ asset('template/css/sb-admin-2.min.css') }}" rel="stylesheet">
+    <link href="template/css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 
