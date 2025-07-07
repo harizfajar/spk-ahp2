@@ -10,7 +10,7 @@
     <meta name="author" content="">
 
     <title>Belajar - SPK AHP</title>
-    <link rel="icon" type="image/svg+xml" href="template/img/undraw_rocket.svg">
+    <link rel="icon" type="image/svg+xml" href="/template/img/undraw_rocket.svg">
 
 
     <!-- Custom fonts for this template-->
